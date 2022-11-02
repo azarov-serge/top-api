@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post } from '@nestjs/common';
-import {FindPageDto} from './dto/find-page.dto';
+import { FindPageDto } from './dto/find-page.dto';
 import { PageModel } from './page.model';
 
-@Controller('top-page')
+@Controller('page')
 export class PageController {
+	constructor() {}
 	@Post('create')
 	async create(@Body() dto: Omit<PageModel, 'id'>) {}
 

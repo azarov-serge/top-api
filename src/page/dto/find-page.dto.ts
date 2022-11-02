@@ -1,5 +1,5 @@
-import {LevelCategory} from "../page.model";
+import { LevelCategory } from '../page.model';
 
 export class FindPageDto {
-    firstCategory: LevelCategory;
+	firstCategory: LevelCategory;
 }
