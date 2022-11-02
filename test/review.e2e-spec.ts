@@ -10,8 +10,8 @@ import { REVIEW_NOT_FOUND } from '../src/review/review.constants';
 const productId = new Types.ObjectId().toHexString();
 
 const loginDto: AuthDto = {
-	login: 'test@test.test',
-	password: '1',
+	email: 'test1@test.test',
+	password: 'test1',
 };
 
 const testDto: CreateReviewDto = {
