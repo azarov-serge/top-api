@@ -23,13 +23,16 @@ export class HhData {
 	count: number;
 
 	@prop()
-	juniorScalary: number;
+	juniorSalary: number;
 
 	@prop()
-	middleScalary: number;
+	middleSalary: number;
 
 	@prop()
-	seniorScalary: number;
+	seniorSalary: number;
+
+	@prop()
+	updatedAt: Date;
 }
 
 export class PageAdvantage {
@@ -47,7 +50,7 @@ export class PageModel extends TimeStamps {
 		@prop({ enum: LevelCategory, type: () => Number })
 	*/
 	@prop({ enum: LevelCategory })
-	firstLevelCategorty: LevelCategory;
+	firstCategory: LevelCategory;
 
 	@prop()
 	secondCategory: string;
@@ -59,19 +62,25 @@ export class PageModel extends TimeStamps {
 	title: string;
 
 	@prop()
+	metaTitle: string;
+
+	@prop()
+	metaDescription: string;
+
+	@prop()
 	category: string;
 
 	@prop({ type: () => HhData })
 	hh?: HhData;
 
 	@prop({ type: () => [PageAdvantage] })
-	advantages: PageAdvantage[];
+	advantages?: PageAdvantage[];
 
 	@prop()
-	seotext: string;
+	seoText?: string;
 
 	@prop()
-	tagstitle: string;
+	tagsTitle: string;
 
 	@prop({ type: () => [String] })
 	tags: string[];

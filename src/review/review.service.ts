@@ -9,15 +9,19 @@ import { CreateReviewDto } from './dto/create-review.dto';
 export class ReviewService {
 	constructor(@InjectModel(ReviewModel) private readonly reviewModel: ModelType<ReviewModel>) {}
 
-	async create(dto: CreateReviewDto): Promise<DocumentType<ReviewModel>> {
+	async create(dto: CreateReviewDto): Promise<ReviewModel> {
 		return this.reviewModel.create(dto);
 	}
 
-	async delete(id: string): Promise<DocumentType<ReviewModel> | null> {
-		return await this.reviewModel.findById(id).delete.exec();
+	async delete(id: string): Promise<ReviewModel | null> {
+		return this.reviewModel.findByIdAndDelete(id).exec();
 	}
 
-	async findByProductId(productId: string): Promise<DocumentType<ReviewModel>[]> {
+	async update(id: string, dto: CreateReviewDto): Promise<ReviewModel | null> {
+		return this.reviewModel.findByIdAndUpdate(id, dto, { new: true }).exec();
+	}
+
+	async findByProductId(productId: string): Promise<ReviewModel[]> {
 		return this.reviewModel.find({ productId: new Types.ObjectId(productId) }).exec();
 	}
 

@@ -29,7 +29,7 @@ describe('AuthController (e2e)', () => {
 			.send(loginDto)
 			.expect(200)
 			.then(({ body }: request.Response) => {
-				expect(body.access_token).toBeDefined();
+				expect(body.token).toBeDefined();
                 done();
 			});
 	});
