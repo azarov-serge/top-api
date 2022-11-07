@@ -8,6 +8,8 @@ import { PageModule } from './page/page.module';
 import { ProductModule } from './product/product.module';
 import { ReviewModule } from './review/review.module';
 import { getMongoConfig } from './config/mongo.config';
+import { FilesController } from './files/files.controller';
+import { FilesModule } from './files/files.module';
 
 @Module({
 	imports: [
@@ -21,6 +23,7 @@ import { getMongoConfig } from './config/mongo.config';
 		PageModule,
 		ProductModule,
 		ReviewModule,
+		FilesModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],
