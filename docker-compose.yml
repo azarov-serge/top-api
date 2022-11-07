@@ -4,6 +4,6 @@ services:
     image: app-top-api:latest
     restart: always
     ports:
-      - 3000:3000
+      - 1313:1313
     volumes:
       - ./.env:/opt/app/.env
