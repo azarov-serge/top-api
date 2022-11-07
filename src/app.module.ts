@@ -8,8 +8,8 @@ import { PageModule } from './page/page.module';
 import { ProductModule } from './product/product.module';
 import { ReviewModule } from './review/review.module';
 import { getMongoConfig } from './config/mongo.config';
-import { FilesController } from './files/files.controller';
 import { FilesModule } from './files/files.module';
+import { SitemapModule } from './sitemap/sitemap.module';
 
 @Module({
 	imports: [
@@ -17,13 +17,14 @@ import { FilesModule } from './files/files.module';
 		TypegooseModule.forRootAsync({
 			imports: [ConfigModule],
 			inject: [ConfigService],
-			useFactory: getMongoConfig
+			useFactory: getMongoConfig,
 		}),
 		AuthModule,
 		PageModule,
 		ProductModule,
 		ReviewModule,
 		FilesModule,
+		SitemapModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],
