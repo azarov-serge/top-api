@@ -10,7 +10,7 @@
 #     steps:
 #       - uses: actions/checkout@main
 #       - name: Publish to registy
-#         uses: elgohr/Publish-Docker-Github-Action@main
+#         uses: elgohr/Publish-Docker-Github-Action@v5
 #         with:
 #           registry: docker.pkg.github.com
 #           name: docker.pkg.github.com/azarov-serge/top-api/top-api
